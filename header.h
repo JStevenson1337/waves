@@ -6,4 +6,7 @@
     #include <wx/wx.h>
 #endif
 
+#include <iostream>
+
+
 #endif /*__HEADER_H__*/
