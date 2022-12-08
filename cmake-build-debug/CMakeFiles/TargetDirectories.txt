@@ -1,0 +1,3 @@
+/home/jeremy/Projects/Holberton/waves/cmake-build-debug/CMakeFiles/waves.dir
+/home/jeremy/Projects/Holberton/waves/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jeremy/Projects/Holberton/waves/cmake-build-debug/CMakeFiles/rebuild_cache.dir
