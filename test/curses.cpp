@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <curses.h>
 #include <stdlib.h>
 #include <sys/random.h>
@@ -48,17 +47,20 @@ int main(void)
    mvaddch(yi, xi, '.');
 
    /* ierate the triangle */
+   while (1)
+   {
+      for (iter = 0; iter < ITERMAX; iter++)
+         {
 
-   for (iter = 0; iter < ITERMAX; iter++)
-      {
+          index = random() % 3;
+          yi = (yi + y[index]) / 2;
+          xi = (xi + x[index]) / 2;
 
-       index = random() % 3;
-       yi = (yi + y[index]) / 2;
-       xi = (xi + x[index]) / 2;
-
-       mvaddch(yi, xi, '*');
-       refresh();
-       }
+          mvaddch(yi, xi, '*');
+          refresh();
+          }
+          
+   }
   /* done */
 
        mvaddstr(maxlines, 0, "Press any key to quit");
@@ -69,37 +71,5 @@ int main(void)
 
     exit(0);
 
-=======
-
-#include <iostream>
-#include <stdlib.h>
-
-using namespace std;
-
-
-
-template<typename T, size_t N, size_t M>
-void printArray(T(&mat)[N][M])
-{
-	for (int i = 0; i < N; i ++ ) {
-		for (int j = 0; j < M; j++ ) {
-			cout << mat[i][j] << ' ';
-		}
-		std::cout << std::endl;
-	}
-}
- 
-int main()
-{
-	const int m = 80, n = 80;
- 
-	int mat[m][n] = {
-
-	};
- 
-	printArray(mat);
- 
-	return 0;
->>>>>>> fcbe12dcd1109367b780107bd44cb8ff6bc3f15b
 }
 
