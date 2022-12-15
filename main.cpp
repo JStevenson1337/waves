@@ -20,6 +20,11 @@ int main(void)
 	maxlines = LINES -1;
 	maxcols = COLS -1;
 
+
+
+
+
+/* End */
 	mvaddstr(maxlines, 0, "Press any key to quit!");
 	refresh();
 	getch();
