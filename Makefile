@@ -1,26 +1,27 @@
+########################################################################
+####################### Makefile Template ##############################
+########################################################################
 
-# Makefile for the project "Waves" - Holberton School
-
-
+# Compiler settings - Can be customized.
 CC = g++
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = -lcurses
+LDFLAGS = -lcurses -lpython3.10
 
+# Makefile settings - Can be customized.
 APPNAME = Waves
 EXT = .cpp
-SRCDIR = /home/jeremy/Projects/Holberton/waves
-OBJDIR = .
+SRCDIR = src
+OBJDIR = obj
+INC = -I/usr/include/python3.10
 
-
+############## Do not change anything from here downwards! #############
 SRC = $(wildcard $(SRCDIR)/*$(EXT))
 OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
 DEP = $(OBJ:$(OBJDIR)/%.o=%.d)
-
-
+# UNIX-based OS variables & settings
 RM = rm
 DELOBJ = $(OBJ)
-
-
+# Windows OS variables & settings
 DEL = del
 EXE = .exe
 WDELOBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)\\%.o)
@@ -33,7 +34,7 @@ all: $(APPNAME)
 
 # Builds the app
 $(APPNAME): $(OBJ)
-	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	$(CC) $(CXXFLAGS) $(INC) -o $@ $^ $(LDFLAGS)
 
 # Creates the dependecy rules
 %.d: $(SRCDIR)/%$(EXT)
@@ -44,7 +45,7 @@ $(APPNAME): $(OBJ)
 
 # Building rule for .o files and its .c/.cpp in combination with all .h
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
-	$(CC) $(CXXFLAGS) -o $@ -c $<
+	$(CC) $(CXXFLAGS) $(INC) -o $@  -c $<
 
 ################### Cleaning rules for Unix-based OS ###################
 # Cleans complete project
