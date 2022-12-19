@@ -18,9 +18,9 @@
   ],
   "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false,
-  "C_Cpp_Runner.compilerArgs": [],
-  "C_Cpp_Runner.linkerArgs": [],
-  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.compilerArgs": [-ipython3],
+  "C_Cpp_Runner.linkerArgs": [-lncurses `wx/config --libs` `wx/config --cxxflags` `wx/config --libs std],
+  "C_Cpp_Runner.includePaths": [../include],
   "C_Cpp_Runner.includeSearch": [
     "*",
     "**/*"
