@@ -10,11 +10,16 @@
 #include <sstream>
 #include <ncurses.h>
 #include <stdio.h>
+#include <fstream>
 #include <math.h>
-#include "wx/wx.h"
+#include <jsoncpp/json/json.h>
+#include <wx/wx.h>
+#include <wx/panel.h>
+#include <wx/sizer.h>
+#include "date_converter.h"
 
 #define BUFFER 100;
-
+class DateConverter;
 /*
  * Sunspot data structure - Structure to pull data from the sunspot data file
  * @year - Year of the data
@@ -37,14 +42,17 @@ typedef struct SunspotData {
  * @y - y coordinate of the point (num_sunspots)
  * @return - None
  */
-typedef struct plot_point {
+union plot_point {
 	float x;
 	float y;
 } t_data_p;
 
 /* Function declarations */
-double DateConverter::dateToJulian(ss_data data);
-double DateConverter::computeJulianDay(int year, int month, int day)
+float *num_sunspots = t_data_p.<*float>y;
+double dateToJulian(ss_data data);
+int store_converted_data();
+float* sine_wave = get_sine_osodial_wave_from_csv static_cast<float>&filename;
+float* fourier_transform = create_fourier_transform(sine_wave);
 void create_fourier_transform(float* sine_wave);
 void display_sine_osodial_wave_on_ncurses(float* sine_wave);
 void display_fourier_transform_on_wxwidgets(float* fourier_transform);

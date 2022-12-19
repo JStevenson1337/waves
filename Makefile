@@ -12,7 +12,7 @@ APPNAME = Waves
 EXT = .cpp
 SRCDIR = src
 OBJDIR = obj
-INC = -I/usr/include/python3.10
+INC = -I/usr/include/python3.10 "./build/include/python3.10"
 
 ############## Do not change anything from here downwards! #############
 SRC = $(wildcard $(SRCDIR)/*$(EXT))
@@ -34,7 +34,7 @@ all: $(APPNAME)
 
 # Builds the app
 $(APPNAME): $(OBJ)
-	$(CC) $(CXXFLAGS) $(INC) -o $@ $^ $(LDFLAGS)
+	$(CC) $(CXXFLAGS) $() $(INC) -o $@ $^ $(LDFLAGS)
 
 # Creates the dependecy rules
 %.d: $(SRCDIR)/%$(EXT)
