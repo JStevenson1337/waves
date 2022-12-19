@@ -42,7 +42,11 @@ int main(int argc, char** argv)
  * @filename - Name of the file to read sunspot data from
  * @return - None
  */
+<<<<<<< HEAD
 class DateConverter::ss_data SunspotData(const char *filename)
+=======
+DateConverter::Sunspot(const char *filename)
+>>>>>>> 0f3f92ae62ab61096dcea38401404056d9dd69d2
 {
 	// Set the filename
 	this->filename = filename;
