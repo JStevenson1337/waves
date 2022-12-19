@@ -1,15 +1,33 @@
 #include "../include/header.h"
 
-/* C */
-/* Generate C code based on the sineosodial wave with CSV data from NASA sunspot data using ncurses, wxwidgets and fouier transforms */
+/*
+ * Main - Entry point of the program
+ * @argc: number of arguments
+ * @argv: double pointer to an array of arguments
+ */
 
 
 /* Include header files */
 #include "../include/header.h"
 
 /* Main function */
-int main(int argc, char** argv) {
-	char *filename = argv[1];
+int main(int argc, char** argv)
+{
+	/* Check if filename is provided */
+	if (argc < 2)
+	{
+		argv[1] = "../SN_ms_hem_V2.0.csv";
+	}
+	else if (argc > 2)
+	{
+		printf("Too many arguments supplied.\n");
+		return 0;
+	}
+	else
+	{
+		char *filename = argv[1];
+	}
+	
 
 	/* Get sine osodial wave from CSV data */
 	float* sine_wave = get_sine_osodial_wave_from_csv(filename);

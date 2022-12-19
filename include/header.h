@@ -15,22 +15,36 @@
 
 #define BUFFER 100;
 
-struct Edge
-{
-	int src, dest;
-};
+/*
+ * Sunspot data structure - Structure to pull data from the sunspot data file
+ * @year - Year of the data
+ * @day - Day of the data
+ * @month - Month of the data
+ * @numSunspots - Number of sunspots in the data
+ * @return - None
+ */
+typedef struct SunspotData { 
+	int year;
+	int day; 
+	int month; 
+	int num_sunspots; 
+}ss_data;
 
-struct Graph
-{
-	// V-> Number of vertices, E-> Number of edges
-	int V, E;
-
-	// graph is represented as an array of edges.
-	struct Edge* edge;
-};
+/*
+ * Plot point structure - Structure to store 
+ * coordinates to plot on a graph
+ * @x - x coordinate of the point (jdn)
+ * @y - y coordinate of the point (num_sunspots)
+ * @return - None
+ */
+typedef struct plot_point {
+	float x;
+	float y;
+} t_data_p;
 
 /* Function declarations */
-void get_sine_osodial_wave_from_csv(char* filename);
+double DateConverter::dateToJulian(ss_data data);
+double DateConverter::computeJulianDay(int year, int month, int day)
 void create_fourier_transform(float* sine_wave);
 void display_sine_osodial_wave_on_ncurses(float* sine_wave);
 void display_fourier_transform_on_wxwidgets(float* fourier_transform);
