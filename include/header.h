@@ -8,6 +8,10 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <ncurses.h>
+#include <stdio.h>
+#include <math.h>
+#include "wx/wx.h"
 
 #define BUFFER 100;
 
@@ -25,8 +29,11 @@ struct Graph
 	struct Edge* edge;
 };
 
-int readCSV();
-int initCurse();
+/* Function declarations */
+void get_sine_osodial_wave_from_csv(char* filename);
+void create_fourier_transform(float* sine_wave);
+void display_sine_osodial_wave_on_ncurses(float* sine_wave);
+void display_fourier_transform_on_wxwidgets(float* fourier_transform);
 
 
 #endif // __HEADER_H__
