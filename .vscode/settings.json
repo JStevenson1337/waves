@@ -1,0 +1,8 @@
+{
+	"files.autoSave": "afterDelay",
+	"diffEditor.codeLens": true,
+	"debug.autoExpandLazyVariables": true,
+	"testing.alwaysRevealTestOnStateChange": true,
+	"testing.automaticallyOpenPeekViewDuringAutoRun": true,
+	"scm.providerCountBadge": "auto"
+}
