@@ -4,5 +4,6 @@
 	"debug.autoExpandLazyVariables": true,
 	"testing.alwaysRevealTestOnStateChange": true,
 	"testing.automaticallyOpenPeekViewDuringAutoRun": true,
-	"scm.providerCountBadge": "auto"
+	"scm.providerCountBadge": "auto",
+	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

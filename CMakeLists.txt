@@ -8,18 +8,18 @@ project(Solar_Sinusoid_Rythym)
 set(CMAKE_CXX_STANDARD 14)
 
 # Include the directories containing the header files
-include_directories(inc)
+include_directories(include)
 
 # Add the source files
 file(GLOB SOURCES "src/*.cpp")
 
 # Add the Ncurses library
-find_package(ncurses REQUIRED)
+find_package(findncurses.cmake, ncurses REQUIRED)
 include_directories(${NCURSES_INCLUDE_DIRS})
 
 # Add the Wxwidgets library
 find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
+include(${wxWidgets_INCLUDE_DIRS})
 
 # Add the Math library
 find_package(Math REQUIRED)

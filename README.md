@@ -1,2 +1,4 @@
 # waves
-g++ src/*.cpp ./include/header.h -lcurses `wx-config --cxxflags` -o WavySunSpot
+g++ src/*.cpp ./include/head.h -lcurses `wx-config --cxxflags` -o Solar Sinusoid Rythym
+
+

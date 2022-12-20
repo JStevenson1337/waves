@@ -4,7 +4,7 @@
 #include <ctime>
 #include <fstream>
 #include <ncurses.h>
-#include <math.h>
+#include <cstdargmath.h>
 #include <list>
 #include <iostream> 
 #include <json/json.h>
@@ -25,7 +25,7 @@ struct DataPoint {
 
 
 /* ParseJSON*/
-int parseDataFile()
+int parseDataFile();
 
 /* PlotSine.cpp*/
 int startCurses();

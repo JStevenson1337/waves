@@ -1,5 +1,4 @@
-#include "../inc/head.h"
-
+#include "../include/head.h"
 
 int parseDataFile() 
 {
