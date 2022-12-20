@@ -1,21 +1,51 @@
-project(WaveySpots)
+## CMake File
 
-cmake_minimum_required(VERSION 2.8)
-++ src/*.cpp ./include/header.h -lcurses `wx-config --cxxflags` -o WavySunSpot
+cmake_minimum_required(VERSION 3.5)
 
-add_executable(WaveySpots ${CMAKE_SOURCE_DIR}/*.cpp header.h)
-add_include_directories($} )
+project(Solar_Sinusoid_Rythym)
 
-target_link_libraries(WaveySpots ${WX_LIBRARIES}${NCURSES_LIBRARIES})
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 14)
 
-include_directories(${WX_INCLUDE_DIRS}${NCURSES_INCLUDE_DIRS})
+# Include the directories containing the header files
+include_directories(inc)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# Add the source files
+file(GLOB SOURCES "src/*.cpp")
 
-set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -lncurses")
+# Add the Ncurses library
+find_package(ncurses REQUIRED)
+include_directories(${NCURSES_INCLUDE_DIRS})
 
-set(CMAKE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
-set(CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}/obj)
-set(CMAKE_INCLUDE_DIR ${CMAKE_INCLUDE_DIR}/include)
+# Add the Wxwidgets library
+find_package(wxWidgets REQUIRED)
+include(${wxWidgets_USE_FILE})
 
-++ src/*.cpp ./include/header.h -lcurses `wx-config --cxxflags` -o WavySunSpot
+# Add the Math library
+find_package(Math REQUIRED)
+include_directories(${MATH_INCLUDE_DIRS})
+
+# Add the JSONCPP library
+find_package(JSONCPP REQUIRED)
+include_directories(${JSONCPP_INCLUDE_DIRS})
+
+# Add the Vector library
+find_package(Vector REQUIRED)
+include_directories(${VECTOR_INCLUDE_DIRS})
+
+# Add the executable
+add_executable(Solar_Sinusoid_Rythym ${SOURCES})
+
+# Link the libraries
+target_link_libraries(Solar_Sinusoid_Rythym 
+    ${NCURSES_LIBRARIES}
+    ${wxWidgets_LIBRARIES}
+    ${MATH_LIBRARIES}
+    ${JSONCPP_LIBRARIES}
+    ${VECTOR_LIBRARIES}
+)
+
+# Set the output directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/obj)
