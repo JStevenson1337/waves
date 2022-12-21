@@ -7,11 +7,10 @@
 #include <cstdargmath.h>
 #include <list>
 #include <iostream> 
-#include <json/json.h>
 #include <jsoncpp/json/json.h>
 #include <sstream>
 #include <string>
-#include <wxwidgets/wxwidgets.h> 
+#include <wx/wx.h> 
 #include <vector> 
 
 using namespace std;

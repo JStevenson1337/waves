@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Solar_Sinusoid_Rythym)
 
 # Set the C++ standard
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 11)
 
 # Include the directories containing the header files
 include_directories(include)
@@ -22,7 +22,7 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_INCLUDE_DIRS})
 
 # Add the Math library
-find_package(Math REQUIRED)
+find_package(MATH_INCLUDE_DIRS REQUIRED)
 include_directories(${MATH_INCLUDE_DIRS})
 
 # Add the JSONCPP library
