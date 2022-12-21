@@ -1,13 +1,13 @@
 #include "../include/head.h"
 
-int parseDataFile() 
+int parseDataFile(void)
 {
-	std::ifstream inputFile;
-	inputFile.open("Ingest.json");
+	ifstream inputFile;
+	inputFile.open("DATA/Ingest.json");
 	Json::Value root;
 	inputFile >> root;
-	std::ofstream outputFile;
-	outputFile.open("results/output.json");
+	ofstream outputFile;
+	outputFile.open("DATA/RESULTS/Output.json");
 	Json::Value outputArray;
 	for (Json::Value::iterator itr = root.begin(); itr != root.end(); ++itr) 
 	{
@@ -22,15 +22,16 @@ int parseDataFile()
 		outputArray.append(result);
 		if (outputArray.size() == 100)
 		{
-			outputFile << outputArray << std::endl;
+			outputFile << outputArray << endl;
 			outputArray.clear();
 		}
 	}
 	if (outputArray.size() > 0)
 	{
-		outputFile << outputArray << std::endl;
+		outputFile << outputArray << endl;
 	}
 	inputFile.close();
 	outputFile.close();
 	return 0;
 }
+

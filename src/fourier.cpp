@@ -1,34 +1,40 @@
 #include "../include/head.h"
 
 
+/*
+ * plotFourier - Plot the fourier series of a given data 
+ * set
+ * 
+ *
+ */
+int plotFourier;
+{
+	wxChartViewer chartViewer;
 
-int plotFourier() 
-{ 
- 
-	list<double> dataPoints; 
-	dataPoints.push_back(0.5); 
-	dataPoints.push_back(0.6); 
-	dataPoints.push_back(0.7); 
-	dataPoints.push_back(0.8); 
+	list<double> dataPoints;
+	dataPoints.push_back(0.5);
+	dataPoints.push_back(0.6);
+	dataPoints.push_back(0.7);
+	dataPoints.push_back(0.8);
 
 
 	list<double> fourierSeries; 
 	fourierSeries = calculateFourierSeries(dataPoints); 
 
 
-	vector<list<double>> data; 
-	data.push_back(dataPoints); 
-	data.push_back(fourierSeries); 
+	vector<list<double>> data;
+	data.push_back(dataPoints);
+	data.push_back(fourierSeries);
 
 	wxChartViewer chartViewer; 
 	chartViewer.showChart(data); 
 
 
-	initscr(); 
-	for (auto i : fourierSeries) 
-		printw("%lf ", i); 
-	refresh(); 
-	endwin(); 
+	initscr();
+	for (auto i : fourierSeries)
+		printw("%lf ", i);
+	refresh();
+	endwin();
 
 
 	string folderName = "FourierSeries"; 

@@ -1,13 +1,13 @@
 #include "../include/head.h"
 
 
-int startCurses()
+int startCurses;
 {
 
 	initscr();
 	curs_set(0);
 
-	list<DataPoint> dataPoints = ingestJsonFile("Results/output.json");
+	list<DataPoint> dataPoints = ingestJsonFile("DATA/Results/Output.json");
 
 	double amplitude, period = 100, phaseShift;
 	calculateSinewaveParams(dataPoints, amplitude, period, phaseShift);
@@ -120,6 +120,3 @@ double calculateSinewave(double amplitude, double period, double phaseShift, int
 	return sinewave;
 }
 
-
-
-#endif // __PLOTSINE_H__

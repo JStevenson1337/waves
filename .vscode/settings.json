@@ -1,0 +1,16 @@
+{
+	"workbench.preferredDarkColorTheme": "Solarized Dark",
+	"workbench.colorTheme": "Solarized Dark",
+	"workbench.view.alwaysShowHeaderActions": true,
+	"C_Cpp.autocompleteAddParentheses": true,
+	"C_Cpp.default.cppStandard": "c++14",
+	"C_Cpp.default.cStandard": "c17",
+	"C_Cpp.codeAnalysis.clangTidy.useBuildPath": false,
+	"C_Cpp.sshTargetsView": "enabled",
+	"gnuGlobal.debugMode": "Enabled",
+	"gnuGlobal.gtagsForceCpp": "Enabled",
+	"gnuGlobal.gtagSkipSymlink": "All",
+	"gnuGlobal.libraryPath": [
+	
+	]
+}
